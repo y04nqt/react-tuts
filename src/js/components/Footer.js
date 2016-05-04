@@ -7,14 +7,16 @@ export default class Footer extends React.Component{
       name : " AKR",
       clause : " All Rights Reserved"
     }
-    this.changeName = function(err){
-      if(this.state.name == " AKR"){
+    this.nameChanged = false;
+    this.changeName = function(){
+      if(this.state.name == " AKR" && this.nameChanged == false ){
         setTimeout(() => {
           this.setState({name : ' AARONI'})
           console.log('hit');
+          this.nameChanged = true;
         }, 2000)
       }else if(this.state.name != " AKR"){
-        console.log('passed');
+        return null;
       }else{
         console.log('error!');
       }
@@ -25,9 +27,9 @@ export default class Footer extends React.Component{
     let d = new Date();
     let y = d.getFullYear();
     this.changeName();
-    // setTimeout(() => {
-    //   this.setState({name : ' AARONI'})
-    // }, 2000)
+    setTimeout(() => {
+      this.setState({name : ' AARONI'})
+    }, 2000)
     return(
       <footer>
         <h2>{this.copyright+y}{this.state.name}{this.state.clause}</h2>
