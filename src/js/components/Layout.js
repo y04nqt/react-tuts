@@ -5,9 +5,11 @@ import Header from './Header';
 
 export default class Layout extends React.Component{
   render(){
+    const title = "React Love";
+
     return(
       <div>
-        <Header />
+        <Header title={title} />
         <Footer/>
       </div>
     );
