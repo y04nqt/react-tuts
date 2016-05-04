@@ -1,20 +1,22 @@
 import React from 'react';
-import Time from 'react-time';
-import Moment from 'moment'
+
 export default class Footer extends React.Component{
   constructor(){
     super();
+    this.state = {
+      name : " AKR",
+      clause : " All Rights Reserved"
+    }
     this.copyright = "Copyright © "
-    this.name = " AKR "
-    this.rightsClause = " All rights reserved"
-    name = this.name;
+    name = this.state.name;
   }
   render(){
     let d = new Date();
     let y = d.getFullYear();
+
     return(
       <footer>
-        <h1>{this.copyright}{y}{name}{this.rightsClause}</h1>
+        <h1>{this.copyright+y}{name}{this.state.clause}</h1>
       </footer>
     );
   }
