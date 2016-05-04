@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Footer from './Footer';
-import Header from './Header';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 export default class Layout extends React.Component{
   constructor(){
@@ -10,7 +10,7 @@ export default class Layout extends React.Component{
       title : "React Love"
     }
   }
-  
+
   changeTitle(title){
     this.setState({title});
   }
