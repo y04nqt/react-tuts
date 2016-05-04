@@ -1,14 +1,20 @@
 import React from 'react';
 
+import Header from './Header';
+
 export default class Layout extends React.Component{
-  constructor(){
-    super();
-    this.name = 'Universe';
-    name = this.name;
-  }
   render(){
+    var hList = [
+      <Header />,
+      <Header />,
+      <Header />
+    ];
     return(
-        <h1>Greetings, {name}. I am glad to be here with you</h1>
+      <div>
+        <Header />
+      //or
+        {hList}
+      </div>
     );
   }
 }
